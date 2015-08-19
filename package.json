@@ -3,17 +3,15 @@
   "version": "0.1.0",
   "description": "Get a string representation of a time difference",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
-    "round": "^2.0.1",
+    "round": "^2.0.1"
+  },
+  "devDependencies": {
     "standard": "^5.1.0",
     "tape": "^4.2.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "node test/index.js"
+    "test": "standard && node test/index.js"
   },
   "repository": {
     "type": "git",

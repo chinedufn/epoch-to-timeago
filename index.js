@@ -1,5 +1,6 @@
 var round = require('round')
 var converter = module.exports = {
+  cutoff: require('./cutoff/cutoff.js'),
   timeCalcs: require('./time-calculations'),
   suffixDictionary: require('./suffix/suffix-dictionary.js'),
   timeAgo: GetTimeAgo
@@ -16,22 +17,23 @@ function GetTimeAgo (pastEpoch, currentEpoch) {
   var form // singular or plural
 
   var suffix = converter.suffixDictionary
-  if (seconds < 60) {
+  var cutoff = converter.cutoff
+  if (seconds < cutoff.seconds) {
     form = getForm(seconds)
     return seconds + ' ' + suffix.seconds[form]
-  } else if (minutes < 60) {
+  } else if (minutes < cutoff.minutes) {
     form = getForm(minutes)
     return minutes + ' ' + suffix.minutes[form]
-  } else if (hours < 24) {
+  } else if (hours < cutoff.hours) {
     form = getForm(hours)
     return hours + ' ' + suffix.hours[form]
-  } else if (days < 7) {
+  } else if (days < cutoff.days) {
     form = getForm(days)
     return days + ' ' + suffix.days[form]
-  } else if (weeks < 4) {
+  } else if (weeks < cutoff.weeks) {
     form = getForm(weeks)
     return weeks + ' ' + suffix.weeks[form]
-  } else if (months < 12) {
+  } else if (months < cutoff.months) {
     form = getForm(months)
     return months + ' ' + suffix.months[form]
   } else {

@@ -24,13 +24,15 @@ timeAgo(originalTime, twoMinutes) // 2 minutes ago
 
 ## Cutoffs
 
-- seconds < 60
-- minutes < 60
-- hours < 24
-- days < 31
-- weeks < 4
-- months < 12
-- years
+Don't like the default cutoffs? Replace them with your own!
+
+```js
+var convert = require('epoch-to-timeago')
+convert.cutoff.seconds = 63
+
+timeAgo(originalTime, sixtyOneSeconds) // 61 seconds ago
+timeAgo(originalTime, sixtyFourSeconds) // 1 minute ago
+```
 
 ## Suffixes
 

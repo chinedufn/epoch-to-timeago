@@ -43,8 +43,21 @@ var convert = require('epoch-to-timeago')
 convert.suffixDictionary = require('./german-suffix')
 var timeAgo = convert.timeAgo
 
-timeAgo(origintalTime, oneSecond) // 1 zweite vor
+timeAgo(originalTime, oneSecond) // 1 zweite vor
 timeAgo(originalTime, twoSeconds) // 2 vor sekundan
+```
+
+## Time Calculations
+
+Don't like the default time calculations? Replace them with your own!
+
+```js
+var convert = require('epoch-to-timeago')
+convert.timeCalcs.months = function (pastEpoch, currentEpoch) {
+  // 30 day month instead of 31
+  return (currentEpoch - pastEpoch) / 1000 / 60 / 60 / 24 / 30
+}
+var timeAgo = convert.timeAgo
 ```
 
 ## License

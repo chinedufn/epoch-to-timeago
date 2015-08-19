@@ -1,8 +1,8 @@
 var round = require('round')
 var converter = module.exports = {
   cutoff: require('./cutoff/cutoff.js'),
-  timeCalcs: require('./time-calculations'),
   suffixDictionary: require('./suffix/suffix-dictionary.js'),
+  timeCalcs: require('./time-calculations'),
   timeAgo: GetTimeAgo
 }
 

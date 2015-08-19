@@ -1,6 +1,6 @@
 {
   "name": "epoch-to-timeago",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Get a string representation of a time difference",
   "main": "index.js",
   "dependencies": {

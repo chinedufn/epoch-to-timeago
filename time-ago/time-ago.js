@@ -10,31 +10,24 @@ function TimeAgo (pastEpoch, currentEpoch) {
   var weeks = round(this.timeCalcs.weeks(pastEpoch, currentEpoch))
   var months = round(this.timeCalcs.months(pastEpoch, currentEpoch))
   var years = round(this.timeCalcs.years(pastEpoch, currentEpoch))
-  var form // singular or plural
 
   var suffix = this.suffixDictionary
   var cutoff = this.cutoff
+
   if (seconds < cutoff.seconds) {
-    form = getForm(seconds)
-    return seconds + ' ' + suffix.seconds[form]
+    return seconds + suffix.seconds[getForm(seconds)]
   } else if (minutes < cutoff.minutes) {
-    form = getForm(minutes)
-    return minutes + ' ' + suffix.minutes[form]
+    return minutes + suffix.minutes[getForm(minutes)]
   } else if (hours < cutoff.hours) {
-    form = getForm(hours)
-    return hours + ' ' + suffix.hours[form]
+    return hours + suffix.hours[getForm(hours)]
   } else if (days < cutoff.days) {
-    form = getForm(days)
-    return days + ' ' + suffix.days[form]
+    return days + suffix.days[getForm(days)]
   } else if (weeks < cutoff.weeks) {
-    form = getForm(weeks)
-    return weeks + ' ' + suffix.weeks[form]
+    return weeks + suffix.weeks[getForm(weeks)]
   } else if (months < cutoff.months) {
-    form = getForm(months)
-    return months + ' ' + suffix.months[form]
+    return months + suffix.months[getForm(months)]
   } else {
-    form = getForm(years)
-    return years + ' ' + suffix.years[form]
+    return years + suffix.years[getForm(years)]
   }
 }
 

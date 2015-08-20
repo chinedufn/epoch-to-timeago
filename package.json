@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Get a string representation of a time difference",
   "main": "index.js",
-  "dependencies": {
-    "round": "^2.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "standard": "^5.1.0",
     "tape": "^4.2.0"

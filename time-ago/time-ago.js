@@ -1,15 +1,13 @@
-var round = require('round')
-
 module.exports = TimeAgo
 
 function TimeAgo (pastEpoch, currentEpoch) {
-  var seconds = round(this.timeCalcs.seconds(pastEpoch, currentEpoch))
-  var minutes = round(this.timeCalcs.minutes(pastEpoch, currentEpoch))
-  var hours = round(this.timeCalcs.hours(pastEpoch, currentEpoch))
-  var days = round(this.timeCalcs.days(pastEpoch, currentEpoch))
-  var weeks = round(this.timeCalcs.weeks(pastEpoch, currentEpoch))
-  var months = round(this.timeCalcs.months(pastEpoch, currentEpoch))
-  var years = round(this.timeCalcs.years(pastEpoch, currentEpoch))
+  var seconds = Math.round(this.timeCalcs.seconds(pastEpoch, currentEpoch))
+  var minutes = Math.round(this.timeCalcs.minutes(pastEpoch, currentEpoch))
+  var hours = Math.round(this.timeCalcs.hours(pastEpoch, currentEpoch))
+  var days = Math.round(this.timeCalcs.days(pastEpoch, currentEpoch))
+  var weeks = Math.round(this.timeCalcs.weeks(pastEpoch, currentEpoch))
+  var months = Math.round(this.timeCalcs.months(pastEpoch, currentEpoch))
+  var years = Math.round(this.timeCalcs.years(pastEpoch, currentEpoch))
 
   var suffix = this.suffixDictionary
   var cutoff = this.cutoff
